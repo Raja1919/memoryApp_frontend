@@ -18,6 +18,7 @@ const Form = () => {
   const dispatch = useDispatch();
 
   const [postData, setPostData] = useState(initialFormData);
+  const [fileKey, setFileKey] = useState(Date.now());
 
   const handleFileSelect = (file) => {
     setPostData({ ...postData, selectedFile: file.base64 });
@@ -26,15 +27,20 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Dispatch the createPost action to add a new post
-    await dispatch(createPost(postData));
+    dispatch(createPost(postData));
 
-    // Clear the form data
     handleClear();
   };
 
   const handleClear = () => {
-    setPostData(initialFormData);
+    setPostData({
+      title: "",
+      message: "",
+      creator: "",
+      tags: "",
+      selectedFile: "",
+    });
+    setFileKey(Date.now());
   };
 
   return (
@@ -90,7 +96,12 @@ const Form = () => {
           />
 
           <div className="FileBase" style={{ marginBottom: 8 }}>
-            <FileBase type="file" multiple={false} onDone={handleFileSelect} />
+            <FileBase
+              key={fileKey}
+              type="file"
+              multiple={false}
+              onDone={handleFileSelect}
+            />
           </div>
 
           <Button
