@@ -44,7 +44,6 @@ const Form = () => {
           <Typography variant="h6">Creating a memory</Typography>
 
           <TextField
-            className="TextField"
             name="creator"
             variant="outlined"
             label="Creator"
@@ -53,10 +52,10 @@ const Form = () => {
             onChange={(e) =>
               setPostData({ ...postData, creator: e.target.value })
             }
+            style={{ marginBottom: 8 }}
           />
 
           <TextField
-            className="TextField"
             name="title"
             variant="outlined"
             label="Title"
@@ -65,10 +64,10 @@ const Form = () => {
             onChange={(e) =>
               setPostData({ ...postData, title: e.target.value })
             }
+            style={{ marginBottom: 8 }}
           />
 
           <TextField
-            className="TextField"
             name="message"
             variant="outlined"
             label="Message"
@@ -77,35 +76,35 @@ const Form = () => {
             onChange={(e) =>
               setPostData({ ...postData, message: e.target.value })
             }
+            style={{ marginBottom: 8 }}
           />
 
           <TextField
-            className="TextField"
             name="tags"
             variant="outlined"
             label="Tags"
             fullWidth
             value={postData.tags}
             onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+            style={{ marginBottom: 8 }}
           />
 
-          <div className="FileBase">
+          <div className="FileBase" style={{ marginBottom: 8 }}>
             <FileBase type="file" multiple={false} onDone={handleFileSelect} />
           </div>
 
           <Button
-            className="submit_Button"
             variant="contained"
             color="primary"
             size="large"
             type="submit"
             fullWidth
+            style={{ marginBottom: 8 }}
           >
             Submit
           </Button>
 
           <Button
-            className="clear_Button"
             variant="contained"
             color="secondary"
             size="small"
