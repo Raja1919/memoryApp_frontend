@@ -1,0 +1,35 @@
+/* Form.css */
+
+.form_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Paper {
+    padding: 20px;
+    width: 400px;
+    max-width: 100%;
+    margin: 20px;
+  }
+  
+  .TextField {
+    margin-bottom: 15px;
+  }
+  
+  .FileBase {
+    margin-bottom: 15px;
+  }
+  
+  .submit_Button {
+    margin-top: 20px; /* Add some top margin */
+    margin-bottom: 10px; /* Add some bottom margin */
+  }
+  
+  .clear_Button {
+    margin-top: 10px; /* Add some top margin */
+    margin-bottom: 20px; /* Add some bottom margin */
+  }
+  
+  /* Add more styles as needed */
+  
